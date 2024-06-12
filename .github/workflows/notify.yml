@@ -1,4 +1,18 @@
 name: notify
+
 on:
-  discussion_comment:
-    types: [created, edited, deleted]
+    discussion_comment:
+      types: [created, edited, deleted]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                  submodules: true
+                  fetch-depth: 0
+
+            - name: Send tg message
+              run: curl https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage?chat\_id=${{ secrets.TG_CHAT_ID }}&text='有新评论'
