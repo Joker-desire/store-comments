@@ -1,0 +1,4 @@
+name: notify
+on:
+  discussion_comment:
+    types: [created, edited, deleted]
