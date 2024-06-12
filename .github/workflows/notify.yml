@@ -18,9 +18,8 @@ jobs:
                 # Discussion ID: ${{ github.event.discussion.id }}
                 # Discussion Title: ${{ github.event.discussion.title }}
                 # Comment ID: ${{ github.event.comment.id }}
-                COMMENT_DETAIL="""<h3>【Blog Comments】</h3>
-                **Action:** ${{ github.event.action }}
-                **Comment Author:** ${{ github.event.comment.user.login }}
-                **Comment Body:** ${{ github.event.comment.body }}
-                👉🏻[原文](https://joker-desire.github.io/${{ github.event.discussion.title }})"""
+                COMMENT_DETAIL="""🤖【Blog Comments】👉🏻[原文](https://joker-desire.github.io/${{ github.event.discussion.title }})
+                🤔Action: ${{ github.event.action }}
+                🙋🏻‍♂️Comment Author: ${{ github.event.comment.user.login }}
+                ✍🏻Comment Body: ${{ github.event.comment.body }}"""
                 curl -X POST "https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TG_CHAT_ID }}&text=$COMMENT_DETAIL&parse_mode="Markdown"" 
