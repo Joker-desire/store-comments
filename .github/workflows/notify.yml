@@ -15,6 +15,8 @@ jobs:
                   fetch-depth: 0
             - name: Print discussion comment details
               run: |
+                DISCUSSION_URL="${{ github.event.discussion.html_url }}"
+                COMMENT_URL="${{ github.event.comment.html_url }}"
                 COMMENT_DETAIL="Action: ${{ github.event.action }}, \
                 Discussion ID: ${{ github.event.discussion.id }}, \
                 Discussion Title: ${{ github.event.discussion.title }}, \
