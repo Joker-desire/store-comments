@@ -13,13 +13,13 @@ jobs:
               with:
                   submodules: true
                   fetch-depth: 0
-            - name: Print discussion comment details
+            - name: Get details send tg
               run: |
-                DISCUSSION_URL="${{ github.event.discussion.html_url }}"
-                COMMENT_URL="${{ github.event.comment.html_url }}"
-                Discussion ID: ${{ github.event.discussion.id }}
-                Discussion Title: ${{ github.event.discussion.title }}
-                Comment ID: ${{ github.event.comment.id }}
+                # DISCUSSION_URL="${{ github.event.discussion.html_url }}"
+                # COMMENT_URL="${{ github.event.comment.html_url }}"
+                # Discussion ID: ${{ github.event.discussion.id }}
+                # Discussion Title: ${{ github.event.discussion.title }}
+                # Comment ID: ${{ github.event.comment.id }}
                 COMMENT_DETAIL="""🤖【Blog Comments】
                 🤔Action: ${{ github.event.action }}
                 🙋🏻‍♂️Comment Author: ${{ github.event.comment.user.login }}
